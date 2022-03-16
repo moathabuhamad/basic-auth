@@ -19,10 +19,10 @@ const bAuth = async (req, res, next) => {
       if (valid) {
         res.status(200).json({ username: username });
       } else {
-        res.send("user is not valid");
+        res.status(403).send("user is not valid");
       }
     } catch (error) {
-      res.send(error);
+      res.status(403).send("User Not Valid");
     }
   }
 };
